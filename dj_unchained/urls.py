@@ -28,5 +28,5 @@ router.register('notes', PersonalNoteViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
         path('api/', include(router.urls)),
-    re_path('^api-toekn-auth/', views.obtain_auth_token) # ^ means match the beginning of the string.
+    re_path('^api-token-auth/', views.obtain_auth_token) # ^ means match the beginning of the string.
 ]
