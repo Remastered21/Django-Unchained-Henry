@@ -1,1 +1,1 @@
-web: gunicorn Django-Unchained-Henry.wsgi
+web: gunicorn dj_unchained.wsgi
