@@ -28,7 +28,7 @@ router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
-    path('/', RedirectView.as_view(path='admin/')),
+    path('', RedirectView.as_view(url='/admin')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     re_path('^api-token-auth/', views.obtain_auth_token) # ^ means match the beginning of the string.
