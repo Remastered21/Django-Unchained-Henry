@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from decouple import config
-import dj_database_url
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [config('ALLOWED_HOSTS', cast=Csv())]
 
 
 # Application definition
@@ -88,7 +86,6 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -141,5 +138,5 @@ REST_FRAMEWORK = {
     )
 }
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config(conn_max_age=600, ssl_require=True)
