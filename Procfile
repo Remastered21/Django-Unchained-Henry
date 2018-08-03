@@ -1,1 +1,1 @@
-web: gunicorn Django-Unchained-Henry.wsgi --log-file -  
+web: gunicorn Django-Unchained-Henry.wsgi
