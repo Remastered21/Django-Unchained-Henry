@@ -22,10 +22,13 @@ from notes.api import PersonalNoteViewSet
 from rest_framework.authtoken import views
 from django.urls import re_path
 
+from django.views.generic.base import RedirectView
+
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
+    path('/', RedirectView.as_view(path='admin/')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     re_path('^api-token-auth/', views.obtain_auth_token) # ^ means match the beginning of the string.
