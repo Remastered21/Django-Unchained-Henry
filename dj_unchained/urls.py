@@ -22,11 +22,14 @@ from notes.api import PersonalNoteViewSet
 from rest_framework.authtoken import views
 from django.urls import re_path
 
+from graphene_django.views import GraphQLView
+
 router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path('^api-token-auth/', views.obtain_auth_token) # ^ means match the beginning of the string.
+    re_path('^api-token-auth/', views.obtain_auth_token), # ^ means match the beginning of the string.
+    path('graphql/', GraphQLView.as_view(graphiql=True))
 ]
