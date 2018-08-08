@@ -5,11 +5,11 @@ from .models import PersonalNote as PersonalNoteModel
 class PersonalNote(DjangoObjectType):
 
   class Meta:
-    model = PeronsalNoteModel
+    model = PersonalNoteModel
     interfaces = (graphene.relay.Node,) # Describe the data as node in the graph.
 
 class Query(graphene.ObjectType):
-  Personalnotes = grapphene.List(PersonalNote)
+  personalnotes = graphene.List(PersonalNote)
 
   def resolve_personalnotes(self, info):
     # Decide which notes to return
