@@ -13,6 +13,7 @@ gunicorn = "*"
 "psycopg2-binary" = "*"
 whitenoise = "*"
 django-heroku = "*"
+graphene-django = "*"
 
 [dev-packages]
 
