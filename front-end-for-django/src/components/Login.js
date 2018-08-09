@@ -18,10 +18,10 @@ export default class Login extends Component {
     this.setState({ [name]: value });
   };
 
+  // axios stuff 
   submitHandler = e => {
     const login = axios.post(
-      // 'address to in graphql',
-      this.state
+      // 'api/',
     );
 
     e.preventDefault();
@@ -38,6 +38,7 @@ export default class Login extends Component {
       });
   };
 
+  // Show password in plain text
   pwToggler() {
     const pwToggle = document.getElementById("pwInput");
 

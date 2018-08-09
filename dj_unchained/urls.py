@@ -29,7 +29,7 @@ router = routers.DefaultRouter()
 router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
-    url(r'^.*/', TemplateView.as_view(template_name="base-react.html"), name='base'), # connecting with react router
+    # url(r'^.*/', TemplateView.as_view(template_name="base-react.html"), name='base'), # connecting with react router
     # path('', RedirectView.as_view(url='/admin')), # disable this once running production model
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
