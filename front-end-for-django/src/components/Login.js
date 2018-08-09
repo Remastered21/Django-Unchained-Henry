@@ -18,11 +18,23 @@ export default class Login extends Component {
     this.setState({ [name]: value });
   };
 
-  // axios stuff 
+  // axios stuff
   submitHandler = e => {
-    const login = axios.post(
-      // 'api/',
-    );
+    const login = axios({
+      url: "http://localhost:3000/graphql",
+      method: "post",
+      data: {
+        query: `
+          query personalnotes {
+              title
+              content
+              url
+            }
+          `
+      }
+    }).then(result => {
+      console.log(result.data);
+    });
 
     e.preventDefault();
 
