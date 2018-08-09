@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 python-decouple = "*"
 djangorestframework = "*"
-django = "*"
 certifi = "*"
 dj-database-url = "*"
 gunicorn = "*"
@@ -14,6 +13,7 @@ gunicorn = "*"
 whitenoise = "*"
 django-heroku = "*"
 graphene-django = "*"
+django = "*"
 
 [dev-packages]
 
