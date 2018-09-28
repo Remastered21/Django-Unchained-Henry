@@ -3,7 +3,10 @@
 Demo: https://django-backend12.herokuapp.com/ 
 
 ID: superuser
+
 PW: testpassword
+
+
 
 This project involves using Django for the backend, and GraphQL to query data.
 Project currently utilizies debug mode to provide basic interface.
