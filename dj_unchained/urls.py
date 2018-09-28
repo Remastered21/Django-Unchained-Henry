@@ -30,7 +30,7 @@ router.register('notes', PersonalNoteViewSet)
 
 urlpatterns = [
     # url(r'^.*/', TemplateView.as_view(template_name="base-react.html"), name='base'), # connecting with react router
-    # path('', RedirectView.as_view(url='/admin')), # disable this once running production model
+    path('', RedirectView.as_view(url='/admin')), # disable this once running production model
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     re_path('^api-token-auth/', views.obtain_auth_token), # ^ means match the beginning of the string.

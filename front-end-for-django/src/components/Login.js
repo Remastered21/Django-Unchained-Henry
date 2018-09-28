@@ -110,6 +110,7 @@ export default class Login extends Component {
             <div>
               Don't have an assigned ID?
               <br />
+              use 'super' and 'testpassword' to see all the available notes.
               <br />
               <Link to="/register">
                 <button>Request New ID</button>
